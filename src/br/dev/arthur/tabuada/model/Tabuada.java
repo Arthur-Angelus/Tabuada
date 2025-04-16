@@ -30,24 +30,27 @@ public class Tabuada {
 		this.maximoMultiplicador = maximoMultiplicador;
 	}
 
-	public void mostrarTabuada() {
+	public String[] mostrarTabuada() {
 		if (minimoMultiplicador > maximoMultiplicador) {
 			double troca = minimoMultiplicador;
 			minimoMultiplicador = maximoMultiplicador;
 			maximoMultiplicador = troca;
 
 		}
+		
+		//criar o vetor que vai guardar a tabuada
+		//cada elemento do vetor sera uma linha da tabuada
+		double tamanhoTabuada = maximoMultiplicador - minimoMultiplicador + 1;
+		String[] tabuada = new String[(int)tamanhoTabuada];
 
-		System.out.println("TABUADA DO " + multiplicando);
+		int i = 0;
 		while (minimoMultiplicador <= maximoMultiplicador) {
 			double produto = multiplicando * minimoMultiplicador;
-			System.out.println(multiplicando + " X " + minimoMultiplicador + " = " + produto);
+			tabuada[i] = multiplicando + " X " + minimoMultiplicador + " = " + produto;
 			minimoMultiplicador++;
+			i++;
 		}
-		System.out.println("FIM DA TABUADA DO " + multiplicando);
-		System.out.println("--------------------------------------------");
-		System.out.println();
-
+		return tabuada;
 	}
 
 }
