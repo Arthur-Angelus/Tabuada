@@ -40,8 +40,8 @@ public class Tabuada {
 		
 		//criar o vetor que vai guardar a tabuada
 		//cada elemento do vetor sera uma linha da tabuada
-		double tamanhoTabuada = maximoMultiplicador - minimoMultiplicador + 1;
-		String[] tabuada = new String[(int)tamanhoTabuada];
+		int tamanhoTabuada = (int)  (maximoMultiplicador - minimoMultiplicador + 1);
+		String[] tabuada = new String[tamanhoTabuada];
 
 		int i = 0;
 		while (minimoMultiplicador <= maximoMultiplicador) {

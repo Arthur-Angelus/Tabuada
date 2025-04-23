@@ -111,8 +111,8 @@ public class TelaTabuada {
 				
 				Tabuada tabuada = new Tabuada();
 				tabuada.setMultiplicando(multiplicandoDouble);
-				tabuada.setMultiplicando(minDouble);
-				tabuada.setMultiplicando(maxDouble);
+				tabuada.setMinimoMultiplicador(minDouble);
+				tabuada.setMaximoMultiplicador(maxDouble);
 				
 				String[] tabuadaResult = tabuada.mostrarTabuada();
 				
@@ -122,6 +122,18 @@ public class TelaTabuada {
 				
 			}
 			
+		});
+		
+		buttonLimpar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				textMultiplicando.setText("");
+				textMinMultiplicador.setText("");
+				textMaxMultiplicador.setText("");
+				listTabuada.setListData(new String[0]);
+				textMultiplicando.requestFocus();
+			}
 		});
 
 		// Tornar a tela visível "DEVE!!!" ser a ultima instrução
